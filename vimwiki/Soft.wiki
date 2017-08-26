@@ -1,0 +1,11 @@
+[[vim]]
+[[spacemacs]]
+[[Atom]]
+
+[[Chrome]] : 浏览器
+
+[[keepass2]] : 个人密码管理工具
+
+[[Isoplex]] : 视频播放框架
+	
+[[bleachbit]] : Linux 空间清理工具

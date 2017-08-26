@@ -1,0 +1,64 @@
+Install xfce4:
+xfce4 xfce4-terminal tree gcc cmake llvm git gitk nmap fcitx clang tcl ruby vagrant ctags cscope blender dia darktable fontforge wireshark libreoffice librecad smplayer iceweasel [[gimp]] openscad inkscape dosbox xmms2 flashplugin-nonfree apache2 php5 mysql-server mysql-client
+
+Install Software:
+tree gcc cmake llvm gitk nmap clang tcl ruby cscope wireshark gimp xmms2 flashplugin-nonfree
+
+清除软件卸载残留
+	dpkg -l | grep ^rc | cut -d' ' -f3 | sudo xargs dpkg --purge
+
+phpmyadmin
+
+fcitx-table-wubi
+
+ruby-dev python-dev tcl-dev
+
+geany
+
+软件版本优先级查看：
+apt-cache policy apache2
+
+Wifi Crack:
+	reaver
+	reaver -i wlan0 -b 00:25:5E:05:48:D1 -a -S -vv
+
+Usefull software:
+
+Alsa:
+	无声音的情况下先执行：alsactl init
+	
+fglrx-driver:
+	AMD Redeon HD 系统显卡驱动
+
+Blender:
+	3D动画设计
+
+Dia:
+	软件建模
+
+darktable:
+	图片处理软件，功能类似Lightroom
+	
+Evince:
+	PDF文件阅读器
+
+FontForge:
+	字体库编辑软件
+	
+geany:
+	文件管理器＋文本编辑
+
+tint2:
+	一款漂亮的任务栏
+	
+Vagrant:
+	Vagrant是一个基于Ruby的工具，用于创建和部署虚拟化开发环境。它 使用Oracle的开源VirtualBox虚拟化系统，使用 Chef创建自动化虚拟环境。
+
+wpa_passphrase:
+	生成WPA无线连接密码，可以直接用于配制 /etc/network/interfaces
+
+wicd:管理无线网络
+
+you-get:
+	视频转换，看电影
+

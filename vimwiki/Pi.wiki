@@ -1,0 +1,31 @@
+Realtek Semiconductor Corp. RTL8188CUS 802.11n WLAN Adapter
+
+添加无线网卡
+  kmod-usb-net
+  kmod-usb-net-asix
+  kmod-rtl8192cu 
+  hostapd
+  wireless-tools
+
+挂载命令Samba
+for openwrt
+mount -t cifs //192.168.31.1/XiaoMi/Pi /mnt/xiaomi_router -o user=,sec=ntlm,file_mode=0777,unc=\\\\1921.681.31.1\\XiaoMi\\Pi
+for debian pi
+mount -t cifs //192.168.31.1/XiaoMi/Pi /mnt/xiaomi_router -o sec=ntlm,file_mode=0777
+
+aria2:
+#conf file in /etc/aria2/aria2.conf
+dir=/mnt/usb
+disable-ipv6=true
+#open rpc for web download manage
+enable-rpc=true
+rpc-allow-origin-all=true
+rpc-listen-all=true
+#rpc-listen-port=6800
+continue=true
+input-file=/etc/aria2/aria2.session
+save-session=/etc/aria2/aria2.session
+max-concurrent-downloads=3
+
+#run command
+aria2c --conf-path=/etc/aria2/aria2.conf

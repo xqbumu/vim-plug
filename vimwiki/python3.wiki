@@ -1,0 +1,10 @@
+pip 安装时指定缓存目录：
+    pip install --download-cache=/home/bumu/.pip/download-cache -r requirements-dev.txt
+
+pyenv:
+    sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
+    curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+
+tensorflow 安装：
+    export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
+    pip3 install --upgrade $TF_BINARY_URL

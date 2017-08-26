@@ -1,0 +1,1 @@
+sgdisk --zap-all /dev/sdb

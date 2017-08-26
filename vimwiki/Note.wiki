@@ -1,0 +1,44 @@
+proxy:
+	ftp_proxy、 http_proxy、RSYNC_PROXY
+	export http_proxy="http://127.0.0.1:8086"
+
+/etc/resolv.conf:
+	在/etc/dhcp/dhcclient.conf中配置添加：
+	prepend domain-name-servers 10.10.103.123,127.0.0.1;
+	即可设定固定nameserver。
+
+lisp:
+	SBCL
+	
+添加用户到用户组:
+	将一个用户添加到用户组中，千万不能直接用：
+	usermod -G groupA
+
+	这样做会使你离开其他用户组，仅仅做为 这个用户组 groupA 的成员。
+	应该用 加上 -a 选项：
+	usermod -a -G groupA user
+
+分辨率：
+	vim /etc/default/grub 修改
+	GRUB_GFXMODE=1366x768（这里是我已经修改过的、默认是800x600）
+	GRUB_GFXPAYLOAD_LINUX=1366x768（这行是添加的、分辨率也要修改成你自己、）
+	然后update-grub、重启
+
+字体安装：
+	文泉驿字体：xfonts-wqy ttf-wqy-zenhei ttf-wqy-microhei
+	
+thunar：
+	启动过慢因为它在启动时会扫描网络。编辑文件/usr/share/gvfs/mounts/network.mount，将AutoMount=true这一句改为AutoMount=false
+	
+加入源公钥：
+	gpg --keyserver subkeys.pgp.net --recv 15CF4D18AF4F7421
+	gpg --export --armor 15CF4D18AF4F7421 | sudo apt-key add -
+	
+apropos:
+	搜索关键字并且显示所有包含匹配项的man页面的简短描述。
+
+The following packages are RECOMMENDED but will NOT be installed:
+	aptitude-doc-cs aptitude-doc-en aptitude-doc-es aptitude-doc-fi aptitude-doc-fr aptitude-doc-it 
+    aptitude-doc-ja aptitude-doc-ru crda gnupg-curl groff libparse-debianchangelog-perl python-nose 
+	uuid-runtime 
+

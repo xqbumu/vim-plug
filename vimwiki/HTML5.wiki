@@ -1,0 +1,32 @@
+article	hgroup	h1
+				h2
+		p
+		section	h1
+				p
+		section h1
+				p
+
+html	head	mete
+				title
+		body	h1
+				section	h1
+						p
+						p
+						p
+				section	h1
+						ul		li
+						
+header	h1
+article	header	h1
+		header	p
+		
+footer	ul		li
+				li
+
+section footer
+
+article	footer
+
+address	a
+
+

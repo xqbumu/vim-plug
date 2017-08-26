@@ -1,0 +1,6 @@
+1. 在对应的GO安装目录下的src下编译平台依赖文件：
+sudo CGO_ENABLED=0 GOOS=linux GOARCH=arm ./make.bash
+
+2. 对源代码进行编译
+CGO_ENABLED=0 GOOS=linux GOARCH=arm go build
+CGO_ENABLED=0 GOOS=linux GOARCH=arm go build -ldflags "-s -w"

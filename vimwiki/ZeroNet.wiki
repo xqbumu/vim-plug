@@ -1,0 +1,12 @@
+siteCreate:
+Site private key: 5JAzTf8gSzpcPoX7Z15GSar77qb74x2Qxx93CPABxv3YuvFFYpf
+                  !!! ^ Save it now, required to modify the site ^ !!!
+Site address:     1L1zGMG7dS1hRDSLmkBEcFTQK6GW97rUXp
+
+zeroId:
+username:
+xqbumu
+To address:
+BM-2cUhFY6Ay2LSZZTJ1por17uRWa2oXGQKuK
+Send message:
+add:1FacgmFY8uXomeHLNCMFM1bxQryoVUCNC4:xqbumu

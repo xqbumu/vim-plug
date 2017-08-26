@@ -1,0 +1,44 @@
+在Linux上，iptables是用于建立和维护IP包过滤规则表的管理工具，实际过滤工作由内核的netfilter模块负责。
+规则表有几种（最常用的是filter表），每个表中可以包含若干规则链，每个规则链包含一组规则，每条规则定义一个匹配条件和处理动作。
+
+常用的规则链：
+INPUT： 处理从外部发给本机的网络包；
+FORWARD： 处理从外部发来，需要转发到外部的网络包；
+OUTPUT： 处理从本机发往外部的网络包；
+
+常用的处理动作：
+ACCEPT： 通过；
+DROP： 抛弃；
+QUEUE： 通过，并加入用户空间的队列中；
+RETURN： 停止后续规则检查，直接转到默认处理；
+
+分析一个实际的网络防火墙过滤表：
+-A INPUT -i lo -j ACCEPT
+-A INPUT表示加入INPUT链，对应接收数据包；-i lo表示来自本机网络接口(localhost)；-j ACCEPT表示处理动作为接受。整条规则表示所有本机发给自己的数据包可以通过。
+
+-A INPUT -i !lo -d 127.0.0.0/8 -j REJECT
+-i !lo表示非localhost的其他网络接口，-d 127.0.0.0/8 表示网络地址的匹配，使用网络掩码255.0.0.0（255的二进制有8个1，如果是掩码255.255.255.0，对应的数字为24）处理后与127.0.0.0相同。整条规则表示不是来自本机，且IP地址以127开头的数据包全部丢弃；
+
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-m表示match，state –state ESTABLISHED,RELATED表示状态为已有连接通道上的网络包；
+
+-A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 443 -j ACCEPT
+-p对应网络协议，–dport对应端口号；两条规则表示接受http（80端口），https（443端口）的tcp包；
+j
+-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+SSH协议使用22端口，这条规则表示接收新建SSH连接的数据包；
+
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+–icmp-type 8对应 echo-request(ping)，此条规则表示允许外部的ping命令；
+
+-A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+记录接收数据包被拒绝（log-level=7）的日志，最高记录频率为5条/分钟，日志可通过dmesg或syslog查看
+
+-A INPUT -j REJECT
+-A FORWARD -j REJECT
+-A OUTPUT -j ACCEPT
+最后放一组默认规则：未匹配的所有接收数据包，拒绝；所有转发数据包，拒绝；所有外发数据包，允许；
+
+如果要在android下通过iptables技术来控制app的网络访问权限，大致规则为：
+-A OUTPUT -m owner --uid-owner [app-uid] -j REJECT

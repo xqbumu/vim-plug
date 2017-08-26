@@ -1,0 +1,11 @@
+[[Git]]
+[[Vim]]
+[[cscope]]
+[[Bash]]
+
+[[PHP]]
+[[Go]]
+[[Nodejs]]
+[[Python2]]
+[[python3]]
+[[Debuging]]

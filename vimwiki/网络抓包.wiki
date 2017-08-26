@@ -1,0 +1,9 @@
+
+Wireshark:
+	异常及其处理方法：
+	Error: Lua: Error during loading: [string "/usr/share/wireshark/init.lua"]:45: dofile been disable.
+	Method: Change dofile(DATA_DIR.."console.lus") to --dofile(DATA_DIR.."console.lus") in the last two line.
+	
+
+finddler:
+	轻量易用的抓包工具

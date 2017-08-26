@@ -1,0 +1,13 @@
+添加共享目录：
+	docker run -i -t -v /host/dir:/container/path images /bin/bash
+
+端口映射：
+
+查看容器IP：
+docker inspect --format='{{.NetworkSettings.IPAddress}}' $CONTAINER_ID
+
+容器创建命令：
+mysql:
+docker run --name bumu-mysql -v /opt/docker/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mapleq12 -d mysql
+
+docker run -it --rm --link bumu-mysql:mysql -p 8001:80 -v /opt/src/php/iwshop:/var/www/html richarvey/nginx-php-fpm /bin/bash

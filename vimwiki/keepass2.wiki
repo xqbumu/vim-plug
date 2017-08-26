@@ -1,0 +1,5 @@
+修正中文显示问题：
+	sudo gedit /etc/fonts/conf.d/49-sansserif.conf
+	
+	<edit name="family" mode="append_last">
+		<string>sans-serif</string> <============ change this font to a CJK font such as "WenQuanYi Zen Hei"

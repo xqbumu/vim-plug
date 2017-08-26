@@ -1,0 +1,2 @@
+Unit nginx.service is masked 解决方法：
+  直接运行sudo systemctl unmask nginx.service

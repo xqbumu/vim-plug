@@ -1,0 +1,6 @@
+Debuging Tools:
+	gdb
+
+	valgrind
+
+	ltrace

@@ -1,0 +1,5 @@
+git:
+	放弃本地修改，git reset --hard FETCH_HEAD，其中，FETCH_HEAD表示上一次成功git pull时的状态。
+	
+archive:
+	git archive master | gzip > name.tar.gz

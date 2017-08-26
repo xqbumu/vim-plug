@@ -1,0 +1,7 @@
+video
+audio
+meter
+datalist
+keygen
+output
+input:hidden 任意字符 text 单行文本 search 单行文本 tel 单行文本 url 绝对地址 email 一个或多个email地址 password 单行文本 datetime 带有时区的时间 date 无时区的年月日时间 month 无时区的年月 week 无时区的周数 time 无时区的时间（小时，分钟，秒，毫秒） datetime-local 无时区的日期与时间 number 数字值 range 范围：<input type="range" min=0 max=100 step=20 value=50> color 8-bit表示的颜色 checkbox checkbox radio radio file 文件 submit 提交按钮 image 图片按钮 reset n/a button n/a

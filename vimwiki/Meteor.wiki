@@ -1,0 +1,5 @@
+手机调试出现问题解决方法：
+    进入构建目录，尝试运行build.sh等脚本文件。
+
+通用启动手机调试命令：
+    meteor run android-device -p 192.168.5.103:3002 --verbose
