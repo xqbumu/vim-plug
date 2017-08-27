@@ -1,4 +1,4 @@
-	
+monaco
 运行三个命令配置一个强大的VIM编辑器。  
 
      # mkdir -p ~/.vim/autoload

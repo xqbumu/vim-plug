@@ -105,7 +105,7 @@
             Plug 'jistr/vim-nerdtree-tabs'
             Plug 'flazz/vim-colorschemes'
             Plug 'mbbill/undotree'
-            Plug 'nathanaelkane/vim-indent-guides'
+            " Plug 'nathanaelkane/vim-indent-guides'
             if !exists('g:invimplug_no_views')
                 Plug 'vim-scripts/restore_view.vim'
             endif

@@ -31,7 +31,7 @@
     "   let g:invimplug_keep_trailing_whitespace = 1
 
     " Enable powerline symbols
-      let g:airline_powerline_fonts = 1
+    "   let g:airline_powerline_fonts = 1
 
     " vim files directory
     "   let g:invimplug_consolidated_directory = <full path to desired directory>

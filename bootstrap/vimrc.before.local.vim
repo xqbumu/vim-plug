@@ -11,9 +11,6 @@ let g:invimplug_bundle_groups=['general', 'programming', 'youcompleteme', 'php',
 " vimviews, vimundo, and vimswap files/directories
 let g:invimplug_consolidated_directory = $HOME . '/.vim/helpers/'
 
-" Enable powerline symbols
-let g:airline_powerline_fonts = 1
-
 " General {
 let g:invimplug_no_autochdir = 1
 " }
@@ -32,7 +29,7 @@ if filereadable(expand("~/.vim/bootstrap/configs/markdown_preview.vim"))
 endif
 
 if filereadable(expand("~/.vim/bootstrap/configs/vim-airline.vim"))
-    " source ~/.vim/bootstrap/configs/vim-airline.vim
+    source ~/.vim/bootstrap/configs/vim-airline.vim
 endif
 
 " load styles
