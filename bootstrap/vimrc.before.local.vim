@@ -9,7 +9,7 @@ let g:invimplug_bundle_groups=['general', 'programming', 'youcompleteme', 'php',
 
 " Specify a different directory in which to place the vimbackup,
 " vimviews, vimundo, and vimswap files/directories
-let g:invimplug_consolidated_directory = $HOME . '/.vim/helpers/'
+let g:invimplug_consolidated_directory = expand('~/.vim/helpers/')
 
 " General {
 let g:invimplug_no_autochdir = 1
