@@ -1,6 +1,10 @@
 " .vimrc.before.local.vim` - before user configuration
+if v:version > 704
+    let g:invimplug_bundle_groups=['general', 'programming', 'youcompleteme', 'php', 'python', 'javascript', 'html', 'go', 'misc', 'others']
+else
+    let g:invimplug_bundle_groups=['general', 'programming', 'php', 'python', 'javascript', 'html', 'go', 'misc', 'others']
+endif
 
-let g:invimplug_bundle_groups=['general', 'programming', 'youcompleteme', 'php', 'python', 'javascript', 'html', 'go', 'misc', 'others']
 "let g:invimplug_bundle_groups=['general', 'go']
 " let g:invimplug_bundle_groups=['programming', 'youcompleteme']
 
