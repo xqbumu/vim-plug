@@ -47,8 +47,14 @@
 " }
 
 " Functions {
-    if filereadable(expand("~/.vim/bootstrap/b07_functions.vim"))
-        source ~/.vim/bootstrap/b07_functions.vim
+    if filereadable(expand("~/.vim/bootstrap/b07_gui.vim"))
+        source ~/.vim/bootstrap/b07_gui.vim
+    endif
+" }
+
+" Functions {
+    if filereadable(expand("~/.vim/bootstrap/b08_functions.vim"))
+        source ~/.vim/bootstrap/b08_functions.vim
     endif
 " }
 
