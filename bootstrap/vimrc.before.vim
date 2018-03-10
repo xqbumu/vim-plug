@@ -58,7 +58,7 @@
     " To set your own font, do it from ~/.vimrc.local.vim
     "   let g:invimplug_no_big_font = 1
 
-    " Disable  omni complete
+    " Disable omni complete
     "   let g:invimplug_no_omni_complete = 1
 
     " Don't create default mappings for multicursors
@@ -78,8 +78,8 @@
 " }
 
 " Use fork before if available {
-    if filereadable(expand("~/.vim/bootstrap/vimrc.before.fork"))
-        source ~/.vim/bootstrap/vimrc.before.fork
+    if filereadable(expand("~/.vim/bootstrap/vimrc.before.fork.vim"))
+        source ~/.vim/bootstrap/vimrc.before.fork.vim
     endif
 " }
 

@@ -53,8 +53,8 @@
 " }
 
 " Use fork vimrc if available {
-    if filereadable(expand("~/.vim/vimrc.fork"))
-        source ~/.vim/vimrc.fork
+    if filereadable(expand("~/.vim/vimrc.fork.vim"))
+        source ~/.vim/vimrc.fork.vim
     endif
 " }
 
