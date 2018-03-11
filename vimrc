@@ -1,6 +1,6 @@
 " Environment {
-    if filereadable(expand("~/.vim/bootstrap/b01_environment.vim"))
-        source ~/.vim/bootstrap/b01_environment.vim
+    if filereadable(expand("~/.vim/bootstrap/vimrc.environment.vim"))
+        source ~/.vim/bootstrap/vimrc.environment.vim
     endif
 " }
 

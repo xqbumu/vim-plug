@@ -1,34 +1,5 @@
 " Environment {
 
-  " Basics {
-    set nocompatible        " Must be first line
-    set background=dark     " Assume a dark background
-  " }
-
-  " Windows Compatible {
-    " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-    " across (heterogeneous) systems easier.
-    if has('win32') || has('win64')
-      set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-
-      " Be nice and check for multi_byte even if the config requires
-      " multi_byte support most of the time
-      if has("multi_byte")
-        " Windows cmd.exe still uses cp850. If Windows ever moved to
-        " Powershell as the primary terminal, this would be utf-8
-        set termencoding=cp850
-        " Let Vim use utf-8 internally, because many scripts require this
-        set encoding=utf-8
-        setglobal fileencoding=utf-8
-        " Windows has traditionally used cp1252, so it's probably wise to
-        " fallback into cp1252 instead of eg. iso-8859-15.
-        " Newer Windows files might contain utf-8 or utf-16 LE so we might
-        " want to try them first.
-        set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15
-      endif
-    endif
-  " }
-
   " Setup Plug Support {
     " The next three lines ensure that the ~/.vim/plugged/ system works
     filetype off
@@ -36,7 +7,6 @@
     " 设置插件更新超时时间（单位：秒）
     let g:plug_timeout=600
   " }
-
 
   " TODO
     " Add an UnPlug command {
@@ -69,7 +39,7 @@
   " In your .vimrc.before.local.vim file
   " list only the plugin groups you will use
   if !exists('g:invimplug_bundle_groups')
-    let g:invimplug_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+    let g:invimplug_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'markdown', 'misc',]
   endif
 
   " To override all the included bundles, add the following to your
@@ -100,7 +70,7 @@
           Plug 'vim-airline/vim-airline-themes'
       endif
       Plug 'powerline/fonts'
-      Plug 'bling/vim-bufferline'
+      Plug 'bling/vim-bufferline' " It could makes set wrong
       Plug 'easymotion/vim-easymotion'
       Plug 'jistr/vim-nerdtree-tabs'
       Plug 'flazz/vim-colorschemes'
@@ -154,7 +124,17 @@
         source ~/.vim/plugged/vim-snippets/snippets/support_functions.vim
       endif
     elseif count(g:invimplug_bundle_groups, 'youcompleteme')
-      Plug 'Valloric/YouCompleteMe' , { 'do': './install.py  --clang-completer --gocode-completer  --tern-completer --racer-completer' }
+      function! BuildYCM(info)
+        " info is a dictionary with 3 fields
+        " - name:   name of the plugin
+        " - status: 'installed', 'updated', or 'unchanged'
+        " - force:  set on PlugInstall! or PlugUpdate!
+        if a:info.status == 'installed' || a:info.force
+          !./install.py --clang-completer --gocode-completer --tern-completer --racer-completer
+        endif
+      endfunction
+      " Plug 'Valloric/YouCompleteMe' , { 'do': './install.py --clang-completer --gocode-completer --tern-completer --racer-completer' }
+      Plug 'Valloric/YouCompleteMe' , { 'do': function('BuildYCM') }
       Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
       Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
     elseif count(g:invimplug_bundle_groups, 'neocomplcache')
@@ -254,7 +234,7 @@
   " Go Lang {
     if count(g:invimplug_bundle_groups, 'go')
       "Plug 'Blackrush/vim-gocode'
-      Plug 'fatih/vim-go', {'for': 'go'}
+      Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
     endif
   " }
 
@@ -267,14 +247,20 @@
   " }
 
   " Markdown {
-    if count(g:invimplug_bundle_groups, 'markdonw')
-      Plug 'tpope/vim-markdown', {'for': ['markdown']}
-      Plug 'spf13/vim-preview', {'for': ['markdown']}
-      " Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
+    if count(g:invimplug_bundle_groups, 'markdown')
+      " Plug 'tpope/vim-markdown', {'for': ['markdown']}
+      Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
+
+      " Plug 'spf13/vim-preview', {'for': ['markdown']}
       " Plug 'greyblake/vim-preview', {'for': ['markdown']}
-      " Plug 'iamcco/markdown-preview.vim', {'for': ['markdown']}
-      "Plug 'hongqn/vim-osx-ime', {'for' : ['markdown']}
-      "Plug 'suan/vim-instant-markdown', {'for' : ['markdown']}
+      " Plug 'suan/vim-instant-markdown', {'for' : ['markdown']}
+
+      Plug 'iamcco/mathjax-support-for-mkdp', {'for': ['markdown']}
+      Plug 'iamcco/markdown-preview.vim', {'for': ['markdown']}
+
+      " Plug 'hongqn/vim-osx-ime', {'for' : ['markdown']}
+
+      Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
     endif
   " }
 
