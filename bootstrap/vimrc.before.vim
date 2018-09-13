@@ -50,9 +50,9 @@
     " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
     " Indent guides will attempt to set your colors smartly. If you
     " want to control them yourself, do it here.
-    "   let g:indent_guides_auto_colors = 0
-    "   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=233
-    "   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=234
+      let g:indent_guides_auto_colors = 0
+      autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=233
+      autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=234
 
     " Leave the default font and size in GVim
     " To set your own font, do it from ~/.vimrc.local.vim

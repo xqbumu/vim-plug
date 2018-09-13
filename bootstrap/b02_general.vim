@@ -19,6 +19,9 @@
   " if !has('gui')
   "     set term=$TERM          " Make arrow and other keys work
   " endif
+  if exists('$TMUX')
+    set term=xterm-256color
+  endif
   " filetype off
   filetype plugin indent on   " Automatically detect file types.
   syntax on                   " Syntax highlighting

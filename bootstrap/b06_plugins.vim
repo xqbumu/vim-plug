@@ -1,27 +1,10 @@
 " Plugins {
 
   " GoLang {
-    if count(g:invimplug_bundle_groups, 'go')
-      let g:go_highlight_functions = 1
-      let g:go_highlight_methods = 1
-      let g:go_highlight_structs = 1
-      let g:go_highlight_operators = 1
-      let g:go_highlight_build_constraints = 1
-      let g:go_fmt_command = "goimports"
-      let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-      let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-      au FileType go nmap <Leader>s <Plug>(go-implements)
-      au FileType go nmap <Leader>i <Plug>(go-info)
-      au FileType go nmap <Leader>e <Plug>(go-rename)
-      au FileType go nmap <leader>r <Plug>(go-run)
-      au FileType go nmap <leader>b <Plug>(go-build)
-      au FileType go nmap <leader>t <Plug>(go-test)
-      au FileType go nmap <Leader>gd <Plug>(go-doc)
-      au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-      au FileType go nmap <leader>co <Plug>(go-coverage)
+    if filereadable(expand("~/.vim/bootstrap/configs/go.vim"))
+        source ~/.vim/bootstrap/configs/go.vim
     endif
   " }
-
 
   " TextObj Sentence {
     if count(g:invimplug_bundle_groups, 'writing')
@@ -579,29 +562,6 @@
       \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ip"],
       \ "html,xml" : ["at"],
       \ }
-  " }
-
-  " vim-airline {
-    " Set configuration options for the statusline plugin vim-airline.
-    " Use the powerline theme and optionally enable powerline symbols.
-    " To use the symbols , , , , , , and .in the statusline
-    " segments add the following to your .vimrc.before.local file:
-    "   let g:airline_powerline_fonts=1
-    " If the previous symbols do not render for you then install a
-    " powerline enabled font.
-
-    " See `:echo g:airline_theme_map` for some more choices
-    " Default in terminal vim is 'dark'
-    if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
-      if !exists('g:airline_theme')
-        let g:airline_theme = 'solarized'
-      endif
-      if !exists('g:airline_powerline_fonts')
-        " Use the default set of separators with a few customizations
-        let g:airline_left_sep='›'  " Slightly fancier than '>'
-        let g:airline_right_sep='‹' " Slightly fancier than '<'
-      endif
-    endif
   " }
 
 " }

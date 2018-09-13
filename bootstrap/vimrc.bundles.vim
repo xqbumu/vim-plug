@@ -130,10 +130,10 @@
         " - status: 'installed', 'updated', or 'unchanged'
         " - force:  set on PlugInstall! or PlugUpdate!
         if a:info.status == 'installed' || a:info.force
-          !./install.py --clang-completer --gocode-completer --tern-completer --racer-completer
+          " !./install.py --clang-completer --gocode-completer --tern-completer --racer-completer
+          !./install.py --clang-completer --gocode-completer --tern-completer
         endif
       endfunction
-      " Plug 'Valloric/YouCompleteMe' , { 'do': './install.py --clang-completer --gocode-completer --tern-completer --racer-completer' }
       Plug 'Valloric/YouCompleteMe' , { 'do': function('BuildYCM') }
       Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
       Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -271,6 +271,7 @@
       Plug 'cespare/vim-toml', {'for' : 'toml'}
       Plug 'quentindecock/vim-cucumber-align-pipes', {'for' : 'ruby'}
       Plug 'saltstack/salt-vim', {'for' : ['yaml']}
+      Plug 'tpope/vim-vinegar'
     endif
   " }
 
@@ -279,6 +280,7 @@
       Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
       Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
       Plug 'peterhoeg/vim-qml', {'for' : 'qml' }
+      Plug 'editorconfig/editorconfig-vim'
     endif
   " }
   endif

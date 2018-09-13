@@ -1,3 +1,8 @@
+" -*- coding: utf-8 -*-
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+
+let &t_ut=''
+
 " Environment {
     if filereadable(expand("~/.vim/bootstrap/vimrc.environment.vim"))
         source ~/.vim/bootstrap/vimrc.environment.vim

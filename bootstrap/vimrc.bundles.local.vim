@@ -20,3 +20,5 @@ let g:vimwiki_list=[{'path': '~/.vim/vimwiki', 'path_html': '~/.vim/vimwiki/vimw
 "Plug 'Blackrush/vim-gocode'
 "Plugin 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/taglist.vim'
+Plug 'tpope/vim-dadbod'
+

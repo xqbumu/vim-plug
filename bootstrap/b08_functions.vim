@@ -135,5 +135,5 @@
   endfunction
 
   execute "noremap " . g:invimplug_edit_config_mapping " :call <SID>EditinvimplugConfig()<CR>"
-  execute "noremap " . g:invimplug_apply_config_mapping . " :source ~/.vim/bootstrap/vimrc<CR>"
+  execute "noremap " . g:invimplug_apply_config_mapping . " :source ~/.vim/vimrc<CR>"
 " }

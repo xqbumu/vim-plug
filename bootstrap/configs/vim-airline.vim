@@ -1,6 +1,6 @@
-" let g:airline_theme='powerlineish'
-" let g:airline_theme='luna'
-" let g:airline_theme='sol'
+" let g:airline_theme = 'powerlineish'
+" let g:airline_theme = 'luna'
+" let g:airline_theme = 'sol'
 
 " Enable powerline symbols
 " Set configuration options for the statusline plugin vim-airline.
@@ -19,8 +19,8 @@ if isdirectory(expand("~/.vim/plugged/vim-airline-themes/"))
     endif
     if !exists('g:airline_powerline_fonts')
         " Use the default set of separators with a few customizations
-        let g:airline_left_sep='›'  " Slightly fancier than '>'
-        let g:airline_right_sep='‹' " Slightly fancier than '<'
+        let g:airline_left_sep = '›'  " Slightly fancier than '>'
+        let g:airline_right_sep = '‹' " Slightly fancier than '<'
     endif
 endif
 
@@ -50,8 +50,8 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 " let g:airline_symbols.branch = "\u2b60"
 " let g:airline_symbols.readonly = "\u2b64"
 " let g:airline_symbols.linenr = "\u2b61"
-" let g:airline_left_sep='›'  " Slightly fancier than '>'
-" let g:airline_right_sep='‹' " Slightly fancier than '<'
+" let g:airline_left_sep = '›'  " Slightly fancier than '>'
+" let g:airline_right_sep = '‹' " Slightly fancier than '<'
 
 let g:airline_extensions = ['branch', 'tabline']
 
